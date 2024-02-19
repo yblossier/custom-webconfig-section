@@ -7,8 +7,6 @@ You can retrieve the articles on my blog :
 1. [Web.config - Create your own custom section](https://hashnode.com/post/clss85qjh000308lb81t56i1r)
 2. [Web.config - Add the intellisense](https://hashnode.com/post/clssd6vcg000909k09vmqgu8m)
 
----
-
 ## **Let's Connect!**
 
 If you enjoyed this project, you might enjoy my other content, too.
