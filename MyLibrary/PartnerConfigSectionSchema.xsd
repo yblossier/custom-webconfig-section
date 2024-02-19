@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="PartnerConfigSectionSchema" targetNamespace="http://tempuri.org/PartnerConfigSectionSchema.xsd" elementFormDefault="qualified" xmlns="http://tempuri.org/PartnerConfigSectionSchema.xsd" xmlns:mstns="http://tempuri.org/PartnerConfigSectionSchema.xsd"    ="" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:complexType name="partnerConfig_T">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element minOccurs="0" name="partner">
+        <xs:complexType>
+          <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="add">
+              <xs:complexType>
+                <xs:attribute name="key" type="xs:string" use="optional"/>
+                <xs:attribute name="value" type="xs:string" use="optional"/>
+                <xs:anyAttribute namespace="http://schemas.microsoft.com/XML-Document-Transform" processContents="strict"/>
+              </xs:complexType>            
+            </xs:element>
+            <xs:element name="remove">
+              <xs:complexType>
+                <xs:attribute name="key" type="xs:string" use="optional"/>      
+                <xs:anyAttribute namespace="http://schemas.microsoft.com/XML-Document-Transform" processContents="strict"/>  
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="clear">
+              <xs:complexType>
+                <!--tag is empty-->                
+                <xs:anyAttribute namespace="http://schemas.microsoft.com/XML-Document-Transform" processContents="strict"/>              
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+          <xs:attribute name="Name" use="required" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>The unique name of the partner</xs:documentation>
+            </xs:annotation>
+          </xs:attribute>
+          <xs:attribute name="Enabled" use="optional" default="false">
+            <xs:annotation>
+              <xs:documentation>Set to true to enable the partner</xs:documentation>
+            </xs:annotation>
+          </xs:attribute>
+          <xs:attribute name="ClientId" use="optional" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>The client ID of the account to use for the partner's service(s)</xs:documentation>
+            </xs:annotation>
+          </xs:attribute>
+          <xs:attribute name="ClientSecret" use="optional" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>The client secret of the account to use for the partner's service(s)</xs:documentation>
+            </xs:annotation>
+          </xs:attribute>
+          <xs:anyAttribute namespace="http://schemas.microsoft.com/XML-Document-Transform" processContents="strict"/>
+        </xs:complexType>
+      </xs:element>
+    </xs:choice>
+    <xs:attribute name="configSource" type="xs:string" use="optional"/>
+    <xs:anyAttribute namespace="http://schemas.microsoft.com/XML-Document-Transform" processContents="strict"/>
+  </xs:complexType>
+  <xs:element name="partnerConfig" type="partnerConfig_T"/>
+</xs:schema>
